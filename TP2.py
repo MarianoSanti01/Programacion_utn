@@ -86,6 +86,60 @@ else:
   print("Acceso denegado")
 
 #EJERCISIO 9
+name = input("¿Cómo te llamas? ")
+gender = input("¿Cuál es tu sexo (M o H)? ")
+if gender == "M":
+    if name.lower() < "m":
+        group = "A"
+    else:
+        group = "B"
+else:
+    if name.lower() > "n":
+        group = "A"
+    else:
+        group = "B"
+print("Tu grupo es " + group)
+
+#EJERCISIO 10
+
+edad = int(input("ingrese edad"))
+if (edad <= 18 ):
+  print("juega gratis")
+else:
+  print("debe pagar 1800")
+
+#EJERCISIO 11
+
+pregunta = input('¿Quieres una pizza vegetariana[1] o no vegetariana[2]?\n (Responder [1 o 2]\n')
+if pregunta == '1':
+  print('Ingredientes vegetarianos\n [Pimiento(1) , Tofu(2)]')
+  ingrediente = input('Ingresa una opcion de ingrediente:\n')
+if(ingrediente == '1'):
+    ingrediente_adicional = 'Pimiemto'
+    print('La pizza es vegatariana\n')
+    print(f'Y sus ingredientes son Mozzarella, Tomate y {ingrediente_adicional}')
+elif(ingrediente == '2'):
+    ingrediente_adicional = 'Tofu'
+    print('La pizza es vegatariana\n')
+    print(f'Y sus ingredientes son Mozzarella, Tomate y {ingrediente_adicional}')
+elif pregunta == '2':
+    print('Ingredientes no vegetarianos\n [Pepperoni(1) , Jamon(2), Salmon(3)]')
+if(pregunta == '2'):
+    ingrediente = input('Ingresa una opcion de ingrediente:\n')
+if(ingrediente == '1'):
+  ingrediente_adicional = 'Pepperoni'
+  print('La pizza no es vegatariana\n')
+  print(f'Y sus ingredientes son Mozzarella, Tomate y {ingrediente_adicional}')
+elif(ingrediente == '2'):
+  ingrediente_adicional = 'Jamon'
+  print('La pizza no es vegatariana\n')
+  print(f'Y sus ingredientes son Mozzarella, Tomate y {ingrediente_adicional}')
+elif(ingrediente == '3'):
+  ingrediente_adicional = 'Salmon'
+  print('La pizza no es vegatariana\n')
+  print(f'Y sus ingredientes son Mozzarella, Tomate y {ingrediente_adicional}')
+else:
+  print('Error de entrada')
 
 #EJERCISIO 12
 fecha_actual = int(input("ingrese la fecha actual "))
@@ -116,8 +170,6 @@ else:
 print("Ingresar los coeficientes de una ecuacion de primer grado ax + b = 0")
 a=int(input("a="))
 b=input("b=")
-
-
 if a==0 and b!=0:
   print("No hay solución")
 elif a!=0 and b== "-x":
@@ -159,6 +211,17 @@ else:
 
 #EJERCISIO 17
 
+dia = input("ingrese el dia de la semana ")
+dia_low=dia.lower()
+if (dia_low == "lunes"):
+   print("hoy es lunes")
+elif(dia_low=="viernes"):
+   print("hoy es viernes")
+elif(dia_low=="sabado" or dia=="domingo"):
+    print("hoy es fin de semana")
+else:
+   print("hoy es martes, miercoles o jueves")
+
 #EJERCISIO 18
 
 horas_trabajadas=int(input('Ingresar las horas trabajadas en el mes:'))
@@ -172,3 +235,10 @@ if horas_trabajadas>48:
 else:
   print(f'No trabajo horas extras. Las horas trabajadas fueron:  {horas_trabajadas}')
 salario_total=horas_trabajadas*salario_hora
+
+#EJERCISIO 19
+
+cant_lapiz = int(input("Ingrese la cantidad de lapices a comprar: "))
+precio = 60 * cant_lapiz
+if cant_lapiz >= 1000:
+    precio_final = precio - (precio * 0.7)
