@@ -1,10 +1,12 @@
+import math
+
 #ejercisio 1
 palabra_encriptada =""
 abecedario="abcdefghijklmnñopqrstuvwxyz"
 corrimiento=int(input("¿cual es el corrimiento? "))
 palabra=""
 for i in range(1):
-  palabra = input("ingrese el mensaje ")
+  palabra = input("ingrese el mensaje ").lower()
   for letra in palabra:
     if (letra in abecedario):
       indice = abecedario.find(letra)
@@ -15,16 +17,15 @@ for i in range(1):
 
 
   print(palabra_encriptada)
+
+
   #ejercisio 2
-  ''' Crear un programa que solicite el ingreso de números enteros positivos, hasta que el usuario ingrese el
-0. Por cada número, informar cuántos dígitos pares y cuántos impares tiene.
-Al finalizar, informar la cantidad de dígitos pares y de dígitos impares leídos en total.'''
 
 n = 1
 dig_pares = 0
 dig_inpares = 0
 while n != 0:
-  n = int(input("INGRESE UN NUMERO par postivo "))
+  n = int(input("INGRESE UN NUMERO PAR POSITIVO "))
   if (n % 2 != 0):
     print("numero no valido")
   else:
@@ -39,6 +40,6 @@ while n != 0:
       else:
         dig_inpares_p = dig_inpares_p + 1
         dig_inpares = dig_inpares + 1
-      auxiliar = auxiliar / 10
+      auxiliar = math.floor(auxiliar/10)
     print("hay ", dig_pares_p, " pares y ", dig_inpares_p, " inpares")
 print("hay ", dig_pares, " pares y ", dig_inpares, " inpares")
