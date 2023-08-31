@@ -130,7 +130,7 @@ for i in range(number+1):
         print(i+1," es divisor de ")
 #ejercisio 16
 number=int(input("cuantos numero se va a introducir "))
-negatives=0
+negatives=0 
 if(number<0):
     print("numero invalido")
 else:
