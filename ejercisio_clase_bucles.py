@@ -1,12 +1,13 @@
 import math
 
 #ejercisio 1
-palabra_encriptada =""
 abecedario="abcdefghijklmnñopqrstuvwxyz"
 corrimiento=int(input("¿cual es el corrimiento? "))
 palabra=""
-for i in range(1):
-  palabra = input("ingrese el mensaje ").lower()
+for i in range(5):
+  print("ingrese el mensaje para el general ",i+1)
+  palabra = input().lower()
+  palabra_encriptada =""
   for letra in palabra:
     if (letra in abecedario):
       indice = abecedario.find(letra)
@@ -25,8 +26,8 @@ n = 1
 dig_pares = 0
 dig_inpares = 0
 while n != 0:
-  n = int(input("INGRESE UN NUMERO PAR POSITIVO "))
-  if (n % 2 != 0):
+  n = int(input("INGRESE UN NUMERO POSITIVO - PARA FINALIZAR INGRESE 0"))
+  if (n < 0):
     print("numero no valido")
   else:
     auxiliar = n

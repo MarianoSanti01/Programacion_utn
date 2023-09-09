@@ -30,28 +30,27 @@ else:
   
 #EJERCISIO 4
 
-voto = input("Ingrese a que candidato va a votar: ")
-voto = voto.lower()
+voto = input("Ingrese a que candidato va a votar: a=rojo b=verdad c=azul ").lower()
 if voto == "a":
     print("Usted a votado por el partido ROJO")
 elif voto == "b":
     print("Usted a votado por el partido VERDAD")
-elif voto == "C":
+elif voto == "c":
     print("Usted a votado por el partido AZUL")
 else:
     print("Opción erronea")
 
 #EJERCISIO 5
 
-letra = input('Ingresa un caracter: \n')
+letra = input('Ingresa un caracter: \n').lower()
 vocales = ('a','e','i','o','u')
 if(len(letra) > 1):
    print('Error de entrada, ingresar solo un carácter')
 else:
   if(letra in vocales):
-    print(f'La letra "{letra}" es una vocal')
+    print(f'La letra {letra} es una vocal')
   else:
-    print("la letra ",letra," no es una vocal")
+    print("la letra {letra} no es una vocal")
 
 #EJERCISIO 6
 
@@ -65,15 +64,15 @@ else:
 
 #EJERCISIO 7
 print("Ingresar tres números")
-a = int(input("a= "))
-b = int(input("b= "))
-c = int(input("c= "))
+num1 = int(input("num1= "))
+num2 = int(input("num2= "))
+num3 = int(input("num3= "))
 print("El número mas grande es")
-max = a
-if b> max:
-  max = b
-if c>max:
- max=c
+max = num1
+if num2> max:
+  max = num2
+if num3>max:
+ max=num3
 print(max)
 
 #EJERCISIO 8 
@@ -87,13 +86,13 @@ else:
 
 #EJERCISIO 9
 name = input("¿Cómo te llamas? ")
-gender = input("¿Cuál es tu sexo (M o H)? ")
-if gender == "M":
+gender = input("¿Cuál es tu sexo (m o h)? ").lower()
+if gender == "m":
     if name.lower() < "m":
         group = "A"
     else:
         group = "B"
-else:
+elif (gender=="h"):
     if name.lower() > "n":
         group = "A"
     else:
@@ -144,10 +143,13 @@ else:
 #EJERCISIO 12
 fecha_actual = int(input("ingrese la fecha actual "))
 fecha_aleatoria = int(input("ingrese fecha aleatoria "))
-if (fecha_actual > fecha_aleatoria):
-  print("pasaron ",fecha_actual-fecha_aleatoria," años desde esa fecha")
+if(fecha_actual<0 or fecha_aleatoria<0):
+   print("años mayores o iguales a 0")
 else:
-  print("faltan",fecha_aleatoria-fecha_actual," años para esa fecha")
+  if (fecha_actual > fecha_aleatoria):
+    print("pasaron ",fecha_actual-fecha_aleatoria," años desde esa fecha")
+  else:
+    print("faltan",fecha_aleatoria-fecha_actual," años para esa fecha")
 
 #EJERCISIO 13
 num1=int(input('Ingresar numero='))
@@ -167,57 +169,56 @@ else:
   print('Se ingresaron numeros negativos o nulos')
 
 #EJERCISIO 14
-print("Ingresar los coeficientes de una ecuacion de primer grado ax + b = 0")
-a=int(input("a="))
-b=input("b=")
-if a==0 and b!=0:
+print("Ingresar los coeficientes de una ecuación de primer grado ax + b = 0")
+first_value=int(input("primer valor="))
+second_value=int(input("segundo valor="))
+if first_value==0 and second_value!=0:
   print("No hay solución")
-elif a!=0 and b== "-x":
+elif first_value!=0 and second_value== "-x":
   print("infinitas soluciones")
-elif a!=0 :
-  b=int(b)
-  x=-b/a
+elif first_value!=0 :
+  second_value=int(second_value)
+  x = -second_value/first_value
   print("la solución es x= ", x)
 
 #EJERCISIO 15
 
 operacion=input("desea saer el area de un triangulo(t) o de un circulo(c) ").lower()   #b*a/2
 if (operacion == "c"):
-  r=int(input("escriba el radio del circulo"))
-  print("el area del circulo es de: ", math.pi*(r**2))
+  radio=int(input("escriba el radio del circulo"))
+  print("el area del circulo es de: ", math.pi*(radio**2))
 elif(operacion=="t"):
-  h=int(input("ingrese la altura del triangulo "))
-  b=int(input("ingrese la base del triangulo "))
-  print("el area del triangul es de: ", b*h/2)
+  altura=int(input("ingrese la altura del triangulo "))
+  base=int(input("ingrese la base del triangulo "))
+  print("el area del triangul es de: ", base*altura/2)
 else:
   print("valor ingresado no valido ")
 
 #EJERCISIO 16
 
-a= int(input("Ingrese un numero entero: "))
-b=int(input("Ingrese otro valor: "))
+num1= int(input("Ingrese un numero entero: "))
+num2=int(input("Ingrese otro valor: "))
 print("Ingrese la operacion que desea realizar, 1: para suma; 2: para el producto; 3: para la resta; 4: para ver la division")
 operacion = (int(input()))
 if operacion == 1:
-   print(a +b)
+   print(num1 +num2)
 elif operacion == 2:
-    print(a * b)
+    print(num1 * num2)
 elif operacion == 3:
-    print(a - b)
+    print(num1 - num2)
 elif operacion == 4:
-    print(a / b)
+    print(num1 / num2)
 else:
    print("Error ")
 
 #EJERCISIO 17
 
-dia = input("ingrese el dia de la semana ")
-dia_low=dia.lower()
-if (dia_low == "lunes"):
+dia = input("ingrese el dia de la semana ").lower()
+if (dia == "lunes"):
    print("hoy es lunes")
-elif(dia_low=="viernes"):
+elif(dia=="viernes"):
    print("hoy es viernes")
-elif(dia_low=="sabado" or dia=="domingo"):
+elif(dia=="sabado" or dia=="domingo"):
     print("hoy es fin de semana")
 else:
    print("hoy es martes, miercoles o jueves")
