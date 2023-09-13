@@ -31,9 +31,6 @@ while True:
         for i in range(len(content_arr)):
             if(content_arr[i].lower()==word):
                 counter += 1
-                i+=1
-            else:
-                i+=1
         print("la palabra ",word, "se muestra un total de: ", counter," veces")
     elif(operation == "4"):
         break
