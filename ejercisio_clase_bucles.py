@@ -1,7 +1,7 @@
 import math
 
 #ejercisio 1
-'''abecedario="abcdefghijklmnñopqrstuvwxyz"
+abecedario="abcdefghijklmnñopqrstuvwxyz"
 corrimiento=int(input("¿cual es el corrimiento? "))
 palabra=""
 for i in range(5):
@@ -18,8 +18,6 @@ for i in range(5):
 
 
   print(palabra_encriptada)
-
-'''
   #ejercisio 2
 
 n = 1
