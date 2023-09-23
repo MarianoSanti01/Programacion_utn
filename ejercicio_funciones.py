@@ -23,28 +23,28 @@ Lo que esta mal es que esta usando variable fuera de la funcion en la funcion, e
 '''
 
 #JUAEGO DEL AHORCADO
-from functions.funciones_ahorcado import *
+from functions.funciones_ahorcado import *#importo las funciones
 import random
 hidden_word = ""
 words= ["teléfono","python","computadora"]
-chosen_word = random.choice(words).lower()
+chosen_word = random.choice(words).lower()#la variable chosen word alamcena una palabra de wrods al azar
 auxiliar_word=chosen_word
 trys=0
 guess=0
-hidden_word=hidde_the_word(chosen_word)
+hidden_word=hidde_the_word(chosen_word)#esta función llena hidden_word con un numero de "_" igual al numero de letras de chosen_word
 while True:
-    if(trys==10 or guess==len(chosen_word)):
+    if(trys==10 or guess==len(chosen_word)):#la unica manera de acabar con el while es si se hacen 10 intentos o se adivina la palabra
         print("fin del juego")
         break
     else:
-        print("intento numero: ",trys+1)
-        print(hidden_word)
-        letter = input("ingrese una letra\n").lower()
-        verified_letter=verifications(letter)
-        if verified_letter:
-            word_and_guess=change_hidden_word(letter,auxiliar_word,hidden_word,guess)
-            hidden_word=word_and_guess[0]
-            guess=word_and_guess[1]
-            auxiliar_word=word_and_guess[2]
-            trys += 1
-final_mesagge(guess,chosen_word)
+        print("intento numero: ",trys+1," de 10")#se le dice al usuario su intento actual
+        print(hidden_word)#se muestra con las letras que adivino y las que no un "_" en su lugar
+        letter = input("ingrese una letra\n").lower()#el usuario ingresa una letra y se convierte a minuscula
+        verified_letter=verifications(letter)#esta funcion verifica que se ingrese una letra, y solo caracteres del abecedario o vocales con acento
+        if verified_letter:#si la verfificacion previa se cumple:
+            word_and_guess=change_hidden_word(letter,auxiliar_word,hidden_word,guess)#esta funcion almacena en la variable world_and_guess una lista con distintos valores
+            hidden_word=word_and_guess[0]#hidden_world se convierte en el string proveido por la lista de la función anterior
+            guess=word_and_guess[1]#el numero de aciertos se convierte el numero proveido por la funcion anterior
+            auxiliar_word=word_and_guess[2]#auxiliar_word es la palabra con los caracteres adivinados eliminados proviene de "change_hidden_word" esto evita que al ingresar simpre la misma letra no suban los aciertos
+            trys += 1#solo aumenta el contador de intentos si el caracter es valido, para no contar con si se ingresan dos teclas por error
+final_mesagge(guess,chosen_word)#dependendiend de el resultado obtenido se mustra distintos mensajes
