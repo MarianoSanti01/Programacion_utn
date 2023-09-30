@@ -45,6 +45,6 @@ while True:
             word_and_guess=change_hidden_word(letter,auxiliar_word,hidden_word,guess)#esta funcion almacena en la variable world_and_guess una lista con distintos valores
             hidden_word=word_and_guess[0]#hidden_world se convierte en el string proveido por la lista de la función anterior
             guess=word_and_guess[1]#el numero de aciertos se convierte el numero proveido por la funcion anterior
-            auxiliar_word=word_and_guess[2]#auxiliar_word es la palabra con los caracteres adivinados eliminados proviene de "change_hidden_word" esto evita que al ingresar simpre la misma letra no suban los aciertos
+            auxiliar_word=word_and_guess[2]#auxiliar_word es la palabra con los caracteres adivinados eliminados, proviene de "change_hidden_word" esto evitar que al ingresar simpre la misma letra no suban los aciertos
             trys += 1#solo aumenta el contador de intentos si el caracter es valido, para no contar con si se ingresan dos teclas por error
 final_mesagge(guess,chosen_word)#dependendiend de el resultado obtenido se mustra distintos mensajes
