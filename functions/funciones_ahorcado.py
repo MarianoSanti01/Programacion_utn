@@ -36,3 +36,5 @@ def final_mesagge(guess,chosen_word):#si el numero de aciertos es igual al numer
         return print("ganaste la pabra secreta era ",chosen_word)
     else:
         return print("perdiste la palbra secreta era ",chosen_word)
+
+        

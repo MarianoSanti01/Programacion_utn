@@ -77,7 +77,6 @@ while True:
         print("---limite de intentos alcansado, intentelo mas tarde---")
         break
 #EJERCICIO 10
-from functions.numbers_addition import *
 shop_cart={
     "modulo":[12000,25],
     "pin":[500,5],
@@ -86,3 +85,13 @@ shop_cart={
 discounts=discount(shop_cart)
 print("el precio final de los productos del carrito es",sum(discounts))
 #ejercicio 11
+
+numbers=[1,2]
+multiplication=caller(called,numbers)
+print("la multiplicacion de 1 * 2 es ",multiplication)
+#ejercicio 12
+from functions.numbers_addition import *
+phrase=input("ingrese su frase")
+dictionary=create_dictionary(phrase)
+print(dictionary)
+#EJERCICIO 13

@@ -91,3 +91,14 @@ def discount(shop_cart):
         discount_operation=round(i[1][0]-(i[1][0]*i[1][1]/100),2)
         discount_applied.append(discount_operation)
     return discount_applied
+def called(n):
+    return n[0]*n[1]
+ 
+def caller(func, n):
+    return func(n)
+def create_dictionary(phrase):
+    dictionary={}
+    splited_phrase=phrase.split(" ")
+    for i in splited_phrase:
+        dictionary.update({i:len(i)})
+    return dictionary

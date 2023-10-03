@@ -1,6 +1,9 @@
 import sys
-
-sys.path.append("C:/Users/juanc/Desktop/Programacion_utn")
+path=sys.path[0]
+splited_path=path.split("/")
+splited_path.pop()
+current_path='/'.join(splited_path)
+sys.path.append(current_path)
 
 from functions.numbers_addition import *
 
@@ -39,3 +42,12 @@ def test_loggin():
 def test_discount():
     assert discount({"modulo":[12000,25],"pin":[500,5],"glass":[4000,30]})==[9000,475,2800]
     assert discount({"placa madre":[58000,30],"RAM":[28000,15],"cpu":[60000,40]})==[40600,23800,36000]
+def test_called():
+    assert called([1,5])==5
+    assert called([5,4])==20
+def test_caller():
+    assert caller(called,[1,2])==2
+    assert caller(called,[5,4])==20
+def test_create_dictionary():
+    assert create_dictionary("hello friend")=={"hello":5,"friend":6}
+    assert create_dictionary("")=={"":0}
