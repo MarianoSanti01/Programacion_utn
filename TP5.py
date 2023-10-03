@@ -21,22 +21,33 @@ while True:
         print("FINAL")
         break
     else:
-        dni=bucle_dni()
+        while True:
+            dni=input("ingrese su dni\n")
+            condition=dni_verification(int(dni))
+            if condition:
+                break
         data=individual_token(name,surname,dni)
         if data != "":
             print(data)
 #EJERCICIO 4
 num1=int(input("ingrese el primer numero \n"))
 num2=int(input("ingrese el segundo numero\n"))
-condition = multiple(num1,num2)
-if condition:
-    print("los numeros ingresados son multiplos")
+if num2<num1:
+    print("no hay multiplos entre esos numeros")
 else:
-    print("los numeros ingresados no son multiplos")
+    condition = multiple(num1,num2)
+    if condition:
+        print("los numeros ingresados son multiplos")
+    else:
+        print("los numeros ingresados no son multiplos")
 #EJERCICIO 5(REVISAR)
+from functions.numbers_addition import *
 days=int(input("de cuantos dias quiere saber la temperatra media? \n"))
 for i in range(days):
-    mid_temp=middle_temp(i+1)
+    print("dia ",i)
+    max_temp=int(input("ingrese temperatura maxima del dia en celsius del dia \n"))
+    minimal_temp=int(input("ingrese temperatura minima del dia en celcius del dia \n"))
+    mid_temp=middle_temp(max_temp,minimal_temp)
     print("la temperatura minima del dia",i ,"es de: ",mid_temp)
 #EJERCICIO 6
 phrase=input("ingrese frase\n")

@@ -1,9 +1,8 @@
 from functions.numbers_addition import *
-shop_cart={
-    "modulo":[12000,25],
-    "pin":[500,5],
-    "glass":[4000,30]
-}
-discounts=discount(shop_cart)
-
-print("el precio final de los productos del carrito es",sum(discounts))
+days=int(input("de cuantos dias quiere saber la temperatra media? \n"))
+for i in range(days):
+    print("dia ",i)
+    max_temp=int(input("ingrese temperatura maxima del dia en celsius del dia \n"))
+    minimal_temp=int(input("ingrese temperatura minima del dia en celcius del dia \n"))
+    mid_temp=middle_temp(max_temp,minimal_temp)
+    print("la temperatura minima del dia",i ,"es de: ",mid_temp)

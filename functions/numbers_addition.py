@@ -6,7 +6,7 @@ def numbers_addition(number):
         result += digit
         number=int(number/10)
     return result
-
+#TP5
 def dni_verification(number):
     if(number>99999999 or number<=999999):
         return False
@@ -16,14 +16,6 @@ def dni_verification(number):
 def long_last_word(phrase):
     words= phrase.split(" ")
     return len(words[-1])
-
-def bucle_dni():
-    while True:
-        dni=input("ingrese su dni\n")
-        condition=dni_verification(int(dni))
-        if condition:
-            break
-    return dni
 
 def individual_token(name,surname,dni):#mejorar
     token=""
@@ -55,17 +47,15 @@ def multiple(num1,num2):
     else:
         return False
 
-def middle_temp(i):#revisar
-    print("dia ",i)
-    max_temp=int(input("ingrese temperatura maxima del dia en celsius del dia \n"))
-    minimal_temp=int(input("ingrese temperatura minima del dia en celcius del dia \n"))
+def middle_temp(max_temp,minimal_temp):#revisar
     mid=max_temp-minimal_temp
     return mid
 
 def phrase_with_spaces(phrase):
     new_phrase=""
     for i in phrase:
-        new_phrase+=i+" "
+        if i != " ":
+            new_phrase+=i+" "
     return new_phrase
 
 def lowest_biggest(numbers):
@@ -80,8 +70,8 @@ def lowest_biggest(numbers):
     return data
 def circuferance_data(radio):
     area= math.pi*(radio**2)
-    diameter = 2*math.pi*radio
-    data=[area,diameter]
+    diameter = 2*radio
+    data=[str(round(area, 2)),str(round(diameter,2))]
     return data
 def loggin(username,password):
     if (username!="usuario1" and password != "asdasd"):
@@ -98,6 +88,6 @@ def loggin(username,password):
 def discount(shop_cart):
     discount_applied=[]
     for i in shop_cart.items():
-        discount_operation=i[1][0]-(i[1][0]*i[1][1]/100)
+        discount_operation=round(i[1][0]-(i[1][0]*i[1][1]/100),2)
         discount_applied.append(discount_operation)
     return discount_applied
