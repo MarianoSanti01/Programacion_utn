@@ -2,11 +2,7 @@ import sys
 path=sys.path[0]
 print(path)
 splited_path=path.replace("tests","")
-print(splited_path)
-
-
-print(splited_path)
-sys.path.append(splited_path)
+sys.path.append("..")
 
 from functions.numbers_addition import *
 
