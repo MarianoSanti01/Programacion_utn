@@ -54,3 +54,22 @@ def test_caller():
 def test_create_dictionary():
     assert create_dictionary("hello friend")=={"hello":5,"friend":6}
     assert create_dictionary("")=={"":0}
+def test_sum_squares():
+    assert sum_squares(2,0)==4
+    assert sum_squares(5,4)==29
+def test_is_prime_number():
+    assert is_prime_number(5)==True
+    assert is_prime_number(4)==False
+def test_facorial():
+    assert facorial(5,1)==120
+    assert  facorial(6,1)==720
+def test_sigle_digit_verification():
+    assert sigle_digit_verification(9)==True
+    assert sigle_digit_verification(10)==False
+def test_number_verification():
+    assert number_verification("")==False
+    assert number_verification(121)==True
+def test_digit_times_in_number():
+    assert digit_times_in_number(222,2)==3
+    assert digit_times_in_number(33,3)==2
+    assert digit_times_in_number(15,2)==0
