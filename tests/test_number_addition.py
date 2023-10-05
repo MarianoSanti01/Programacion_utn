@@ -1,7 +1,4 @@
 import sys
-path=sys.path[0]
-print(path)
-splited_path=path.replace("tests","")
 sys.path.append("..")
 
 from functions.numbers_addition import *
