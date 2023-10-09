@@ -142,7 +142,6 @@ while True:
     else:
         print("datos invalidos ingreselos otra vez")
 #EJERCICIO 17
-from functions.numbers_addition import *
 numbers=[]
 while True:
     num=int(input("ingrese un numero primo o un numero no primo para terminar\n"))
