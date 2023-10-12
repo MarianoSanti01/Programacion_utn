@@ -42,19 +42,4 @@ dictionary=add_element_in_dictionary(dictionary,"age",age)
 dictionary=add_element_in_dictionary(dictionary,"adress",adrees)
 print(dictionary)
 #ejercicio 13
-from functions.funciones_dimensionales import *
-fruits={}
-while True:
-    fruit=input("Ingrese nombre de la fruta\n").lower()
-    validation1=exist_dictionary(fruits,fruit)
-    if not validation1:
-        price=int(input("esa fruta no esta registrada ingrese el precio para guardarla\n"))
-        fruits=add_element_in_dictionary(fruits,fruit,price)
-        kg=int(input("ingrese los kilogramos\n "))
-        price_given=search_value_in_dictionary(fruits,fruit)
-        total=price_given*kg
-    else:
-        kg=int(input("ingrese los kilogramos\n "))
-        price_given=search_value_in_dictionary(fruits,fruit)
-        total=price_given*kg
-    print("valor por kg de ",fruit," es ",price_given,"por los ",kg," kg's pedidos el total a pagar es de ",total)
+ya
