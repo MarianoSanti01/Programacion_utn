@@ -1,4 +1,4 @@
-#Ejercicio 1 + ejercicio 2 + ejercicio 3 + ejercicio 4 + ejercicio 6
+#Ejercicio 1 + ejercicio 2 + ejercicio 3 + ejercicio 4 + ejercicio 5
 from functions.funciones_dimensionales import *
 data=[]
 while True:
