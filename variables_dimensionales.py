@@ -1,14 +1,4 @@
-'''
-Hacer un menú iterativo que permita al usuario realizar las siguientes operaciones:
-- Agregar pasajeros a la lista de viajeros.
-- Agregar ciudades a la lista de ciudades.
-- Dado el DNI de un pasajero, ver a qué ciudad viaja.
-- Dada una ciudad, mostrar la cantidad de pasajeros que viajan a esa ciudad.
-- Dado el DNI de un pasajero, ver a qué país viaja.
-- Dado un país, mostrar cuántos pasajeros viajan a ese país.
-- Salir del programa.
-('Manuel Juarez', 12345678, 'San Juan')
-'''
+#EJERCICIO 1
 from functions.funciones_dimensionales import *
 from functions.numbers_addition import dni_verification
 pasangers=[]
@@ -44,9 +34,13 @@ while True:
                 print("dni invalido vuelva a ingresarlo")
     elif(choise=="2"):#verificar si ciudad existe
         new_city=input("ingrese la ciudad\n").lower()
-        new_country=input("ingrese pais de la ciudad\n").lower()
-        data=add_two_elements_in_tupla(new_city,new_country)
-        destinys.append(data)
+        city_verification=existing_value(destinys,new_city)
+        if city_verification:
+            print("esa ciudad ya esta registrada")
+        else:
+            new_country=input("ingrese pais de la ciudad\n").lower()
+            data=add_two_elements_in_tupla(new_city,new_country)
+            destinys.append(data)
     elif(choise=="3"):
         dni=int(input("ingrese el dni del pasajero\n"))
         aux.append(dni)
@@ -67,11 +61,10 @@ while True:
         validation2=find_tuple_in_list(pasangers,aux)
         if validation2:
             city=give_element_in_tupla(pasangers,aux,2)
-            aux.clear()
-            aux.append(city)
-            validation3=find_tuple_in_list(destinys,aux)
+            
+            validation3=find_tuple_in_list(destinys,city)
             if validation3:
-                country=give_element_in_tupla(destinys,aux,1)
+                country=give_element_in_tupla(destinys,city,1)
                 print("el pasajero viajara a ",country[0])
             else:
                 print("no se encontro la ciudad ingresada")
@@ -83,7 +76,29 @@ while True:
         validation4=find_tuple_in_list(destinys,aux)
         if validation4:
             city=give_element_in_tupla(destinys,aux,0)
-            counter=count_in_list_tuple(pasangers,aux)
+            counter=count_in_list_tuple(pasangers,city)
             print(counter," personas viajaran a ",country)
-print(pasangers)
-print(destinys)
+#EJERCICIO 2
+shopping=[('Nuria Costa',5,1234.5,'Calle 1 - 456'),('Nuria Costa',6,1365.5,'Calle 1 - 456'),('Jorge Russo',7,3999,'Calle 2 - 741')]
+adresses=give_elements(shopping,3)
+print("las direcciones de la lista son: ")
+show_list(adresses)
+#EJERCICIO 3
+from functions.funciones_dimensionales import *
+dictionarys=[
+    {"number":1,"name":'Amanda Núñez',"date":'17/03/2009',"at_day":True},
+    {"number":2,"name":'Bárbara Molina',"date":'17/03/2009',"at_day":True},
+    {"number":3,"name":'Lautaro Campos',"date":'17/03/2009',"at_day":True},
+    {"number":4,"name":'Juan Cruz Berrios',"date":'13/03/2018',"at_day":True},
+    {"number":5,"name":'Lautaro Martines',"date":'13/03/2018',"at_day":False},
+    {"number":3,"name":'Billy Joel',"date":'13/03/2018',"at_day":False},
+]
+num_memebers=count_list(dictionarys)#numero de miembros
+print("*hay ",num_memebers," ingresados")
+at_day=filter_dictionary(dictionarys,"at_day")#lista con booleanos
+tof=count_tof(at_day)#cantidad de socios al dia dependiendo del t o f
+print("*hay ",tof[0]," socios al dia y ",tof[1]," no")
+dictionarys=chage_value_dictionar(dictionarys,"date",'13/03/2018',"14/03/2018")
+named=input("ingrese el nombre y apellido que eliminara\n")
+dictionarys=deleate_from_dictionary(dictionarys,named)
+print(dictionarys)
