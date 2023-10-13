@@ -102,3 +102,31 @@ dictionarys=chage_value_dictionar(dictionarys,"date",'13/03/2018',"14/03/2018")
 named=input("ingrese el nombre y apellido que eliminara\n")
 dictionarys=deleate_from_dictionary(dictionarys,named)
 print(dictionarys)
+
+#Ejercicio 9
+
+import random
+
+def create_board(rows_, columns_):
+    # Genera una lista de números para las cartas y las duplica
+    numbers_ = list(range(1, (rows_ * columns_) // 2 + 1))
+    cards_ = numbers_ + numbers_
+    random.shuffle(cards_)
+    board_ = []
+    for _ in range(rows_):
+        row_ = []
+        for _ in range(columns_):
+            card_ = cards_.pop()
+            row_.append(card_)
+        board_.append(row_)
+    return board_
+
+def print_board(board_, selected_):
+    # Imprime el tablero de juego, ocultando las cartas no seleccionadas
+    for i_ in range(len(board_)):
+        for j_ in range(len(board_[i_])):
+            if (i_, j_) in selected_ or board_[i_][j_] == 0:
+                print(f"{board_[i_][j_]:2}", end=" ")
+            else:
+                print("##", end=" ")
+        print()
