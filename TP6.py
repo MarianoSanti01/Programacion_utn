@@ -21,6 +21,76 @@ print(data)
 data_and_counter=count_same_elements_in_list(data)
 print(data_and_counter)
 print("---FIN---")
+
+#EJERCICIO 6
+
+primary_names = []
+secondary_names = []
+
+# Solicitar nombres de estudiantes
+x=2
+while x != 0:
+    if x ==2:
+        names= input("Ingrese nombre de estudiante de primaria, ingrese una x para salir ").title()
+        if names != 'X':
+            primary_names.append(names)
+        else:
+            x-=1
+            print(" ")
+    elif x==1:
+        names= input("Ingrese nombre de estudiante de secundaria, ingrese una x para salir ").title()
+        if names != "X":
+            secondary_names.append(names)
+        else:
+            x-=1
+            print(" ")
+
+#Imprimir nombres sin repetir
+print(" ")
+print("Nombres")
+all_names = set(primary_names+secondary_names)
+for name in all_names:
+    print(name)
+
+#Imprimir nombres repetidos
+print(" ")
+print("Nombres repetidos")
+repeated_names= set(primary_names) & set(secondary_names)
+for name in repeated_names:
+    print(name)
+
+#Imprimir nombres que no se repiten
+print(" ")
+print("Nombres de primaria que no se repiten en secundaria")
+primary_names_no_repeat= set(primary_names) - set(secondary_names)
+for name in primary_names_no_repeat:
+    print(name)
+
+print(" ")
+print("______________________________________________________________________________________________")
+print(" ")
+#EJERCICIO 7
+
+ocurrency={}
+string_counts=0
+
+#Contador hasta 50 en el que pide las cadenas
+while string_counts < 50:
+    chain = input("Ingrese una cadena ").upper()
+    string_counts +=1
+    
+    #Lector de caracteres y ocurrencias
+    for character in chain:
+        if character in ocurrency:
+            ocurrency[character] +=1
+        else:
+            ocurrency[character]=1
+
+print(" ")
+print("Ocurrencias de caracteres en los strings")
+for character, cuantity in ocurrency.items():
+    print(f"'{character}': {cuantity}")
+
 #ejercicio 11
 from functions.funciones_dimensionales import *
 dictionary={'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
